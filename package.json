@@ -20,7 +20,7 @@
   "homepage": "https://github.com/GrabielDeLaNieve/server_Idea#readme",
   "dependencies": {
     "awilix": "^4.2.6",
-    "bcrypt": "^4.0.1",
+    "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "express": "^4.17.1",
