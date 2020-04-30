@@ -1,5 +1,5 @@
 class BaseService {
-    constructor({ repository }) {
+    constructor( repository ) {
       this.repository = repository;
     }
 
@@ -24,8 +24,8 @@ class BaseService {
     return currentEntity;
     }
 
-    async getAll(entity) {
-    return await this.repository.getAll(entity);
+    async getAll() {
+    return await this.repository.getAll();
     }
   
     async update(id, entity) {

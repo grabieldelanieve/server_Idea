@@ -4,11 +4,11 @@ let _userRepository = null;
 class UserService extends BaseService{
     constructor({ UserRepository }) {
         super(UserRepository)
-        _userRepository = _userRepository;
+        _userRepository = UserRepository;
     }
 
     async getUserByName(username) {
-        return await this.repository.getUserByUserName(username); 
+        return await _userRepository.getUserByUserName(username); 
     }
 }
 
