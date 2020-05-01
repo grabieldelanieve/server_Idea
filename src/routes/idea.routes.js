@@ -4,7 +4,7 @@ const { ParseIntMiddleware, AuthMiddleware } = require("../middlewares");
 module.exports = function({ IdeaController }) {
   const router = Router();
 
-  router.get("", IdeaController.getAll);
+  router.get("", [AuthMiddleware, ParseIntMiddleware], IdeaController.getAll);
   router.get("/:ideaId", IdeaController.get);
   router.get("/:userId/all", IdeaController.getUserIdeas);
   router.post("", IdeaController.create);
