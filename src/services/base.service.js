@@ -1,9 +1,9 @@
 class BaseService {
-    constructor( repository ) {
-      this.repository = repository;
-    }
+  constructor(repository) {
+    this.repository = repository;
+  }
 
-    async get(id) {
+  async get(id) {
     if (!id) {
       const error = new Error();
       error.status = 400;
@@ -22,32 +22,36 @@ class BaseService {
     }
 
     return currentEntity;
-    }
+  }
 
-    async getAll() {
+  async getAll() {
     return await this.repository.getAll();
-    }
-  
-    async update(id, entity) {
-        if (!id) {
-          const error = new Error();
-          error.status = 400;
-          error.message = "id must be sent";
-          throw error;
-        }
-        
-        return await this.repository.update(id, entity);
+  }
+
+    async create(entity) {
+      return await this.repository.create(entity);
     }
 
-    async delete(id) {
-        if (!id) {
-            const error = new Error();
-            error.status = 400;
-            error.message = "id must be sent";
-            throw error;
-        }
-        return await this.repository.delete(id);
+  async update(id, entity) {
+    if (!id) {
+      const error = new Error();
+      error.status = 400;
+      error.message = "id must be sent";
+      throw error;
     }
+
+    return await this.repository.update(id, entity);
+  }
+
+  async delete(id) {
+    if (!id) {
+      const error = new Error();
+      error.status = 400;
+      error.message = "id must be sent";
+      throw error;
+    }
+    return await this.repository.delete(id);
+  }
 }
 
 module.exports = BaseService;

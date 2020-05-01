@@ -1,4 +1,4 @@
-const { sign } = require("jsonwebtoken");
+const { sign } = require("jsonwebtoken"); // Firmar los tokens
 const { JWT_SECRET } = require("../config");
 
 module.exports.generateToken = function(user) {
