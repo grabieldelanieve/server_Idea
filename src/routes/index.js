@@ -12,7 +12,7 @@ module.exports = function({
     CommentRoutes,
     AuthRoutes
 }) {
-    const router = express.Rout8er();
+    const router = express.Router();
     const apiRoutes = express.Router();
 
     apiRoutes
